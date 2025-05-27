@@ -16,6 +16,11 @@ steps:
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
     version: '$(dotnetSdkVersion)'
+    
+- task: UseNode@1
+  displayName: 'use Node.js 18.x'
+  inputs:
+    version: '18.x'
 
 - task: NuGetToolInstaller@0
   inputs:
