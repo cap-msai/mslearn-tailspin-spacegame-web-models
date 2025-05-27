@@ -4,6 +4,11 @@ pool:
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '8.x'
+  
+- task: UseNode@1
+  displayName: 'use Node.js 18.x'
+  inputs:
+    version: '18.x'
 
 steps:
 - task: UseDotNet@2
