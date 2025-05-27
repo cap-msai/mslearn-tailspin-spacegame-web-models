@@ -5,11 +5,6 @@ variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '8.x'
   
-- task: UseNode@1
-  displayName: 'use Node.js 18.x'
-  inputs:
-    version: '18.x'
-
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
@@ -39,6 +34,11 @@ steps:
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
+
+- task: UseNode@1
+  displayName: 'use Node.js 18.x'
+  inputs:
+    version: '18.x'
  
 - task: NuGetCommand@2
   displayName: 'Publish NuGet package'
